@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        label {
+            margin: 5px 0;
+        }
+        #apartments {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .apartment {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+        }
+        .apartment p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filter Apartments</h1>
+    <form>
+        <label>
+            <input type="radio" name="city" value="Baku" onchange="fetchApartments()"> Baku
+        </label>
+        <label>
+            <input type="radio" name="city" value="Sumgait" onchange="fetchApartments()"> Sumgait
+        </label>
+        <label>
+            <input type="radio" name="city" value="Ganja" onchange="fetchApartments()"> Ganja
+        </label>
+    </form>
+
+    <div id="apartments"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
