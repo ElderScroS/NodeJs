@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Read File</title>
+    </head>
+    <body>
+        <h1>File Reader</h1>
+        <button onclick="readFile()">Read</button>
+
+    <script>
+        function readFile() {
+        fetch('/readFile')
+            .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to read file');
+            }
+            return response.text();
+            })
+            .then(data => {
+            console.log('File reading successful:', data);
+            alert('File reading successful! Check reserve.txt for remaining text.');
+            })
+            .catch(error => {
+            console.error('Error reading file:', error);
+            alert('Error reading file. Please try again later.');
+            });
+        }
+    </script>
+    </body>
+</html>
